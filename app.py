@@ -90,7 +90,16 @@ hr {
 </style>
 """,unsafe_allow_html=True)
 
-model=tf.keras.models.load_model('model.h5')
+try:
+    model = tf.keras.models.load_model('model.h5', compile=False)
+    model.compile(
+        optimizer='adam',
+        loss='binary_crossentropy',
+        metrics=['accuracy']
+    )
+except Exception as e:
+    st.error(f"Error loading model: {e}")
+
 with open('label_encoder.pkl','rb')as file:
     label_encoder=pickle.load(file)
 with open('ohe.pkl','rb')as file:
