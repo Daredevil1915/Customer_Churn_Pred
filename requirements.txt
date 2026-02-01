@@ -5,3 +5,4 @@ scikit-learn
 streamlit
 matplotlib
 h5py
+protobuf==4.25.3
