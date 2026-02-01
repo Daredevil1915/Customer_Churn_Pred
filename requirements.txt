@@ -2,7 +2,7 @@ tensorflow==2.20.0
 numpy
 pandas
 scikit-learn
-streamlit
+streamlit>=1.40.0
 matplotlib
 h5py
-protobuf==4.25.3
+protobuf>=5.28.0
